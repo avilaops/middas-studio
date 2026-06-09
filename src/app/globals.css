@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F7;
+  --bg-panel: #FAFAFA;
+  --border-color: #E5E5E7;
+  --text-primary: #1D1D1F;
+  --text-secondary: #6E6E73;
+  --scrollbar-track: #F5F5F7;
+  --scrollbar-thumb: #D1D1D6;
+  --scrollbar-thumb-hover: #B0B0B5;
+  color-scheme: light;
+}
+
+:root.dark {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111113;
+  --bg-panel: #111113;
+  --border-color: #1F1F22;
+  --text-primary: #E8E8EA;
+  --text-secondary: #8A8A93;
+  --scrollbar-track: #111113;
+  --scrollbar-thumb: #2A2A30;
+  --scrollbar-thumb-hover: #3A3A42;
+  color-scheme: dark;
+}
+
+html, body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+
+@layer components {
+  .panel {
+    @apply bg-white dark:bg-groq-panel border border-gray-200 dark:border-groq-border rounded-lg;
+  }
+  .input {
+    @apply bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-groq-border rounded-md px-3 py-2 text-sm
+           focus:outline-none focus:border-groq-orange transition-colors w-full;
+  }
+  .btn {
+    @apply px-4 py-2 rounded-md text-sm font-medium transition-all
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-groq-orange text-white hover:bg-orange-600;
+  }
+  .btn-secondary {
+    @apply btn bg-white dark:bg-groq-panel border border-gray-200 dark:border-groq-border hover:border-groq-orange/50;
+  }
+  .btn-ghost {
+    @apply btn hover:bg-gray-100 dark:hover:bg-groq-panel;
+  }
+  .label {
+    @apply text-xs uppercase tracking-wider text-gray-500 dark:text-groq-muted mb-1.5 font-medium;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full
+           bg-gray-100 dark:bg-groq-panel border border-gray-200 dark:border-groq-border;
+  }
+}

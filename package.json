@@ -1,0 +1,79 @@
+{
+  "name": "midda-studio-code",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@11.5.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "unrs-resolver"
+    ],
+    "ignoredBuiltDependencies": [
+      "electron"
+    ]
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:init": "node --loader ts-node/esm src/db/init.ts",
+    "jarvis": "node scripts/jarvis-cli.mjs",
+    "midda": "node scripts/midda-cli.mjs",
+    "electron:dev": "electron .",
+    "electron:build": "electron-builder",
+    "electron:build:win": "electron-builder --win"
+  },
+  "dependencies": {
+    "@langchain/community": "^1.1.27",
+    "@langchain/core": "^1.1.41",
+    "@langchain/groq": "^1.2.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "electron-is-dev": "^3.0.1",
+    "groq-sdk": "^0.7.0",
+    "langchain": "^1.3.4",
+    "lucide-react": "^0.460.0",
+    "next": "14.2.15",
+    "pg": "^8.13.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.1",
+    "server-only": "^0.0.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@types/pg": "^8.11.10",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "^10.4.20",
+    "electron": "^32.3.3",
+    "electron-builder": "^25.1.8",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.15",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.3"
+  },
+  "build": {
+    "appId": "com.midda.studio.code",
+    "productName": "Midda Studio Code",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "next.config.js",
+      "package.json",
+      ".next/**",
+      "public/**",
+      "src/**",
+      "electron/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/icon.ico"
+    },
+    "publish": null
+  },
+  "main": "electron/main.js"
+}

@@ -1,0 +1,59 @@
+# Node dependencies
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Electron
+dist/
+release/
+
+# PostgreSQL
+*.sql.backup
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Build cache
+.turbo/
+.next/cache/
